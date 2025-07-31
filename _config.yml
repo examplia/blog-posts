@@ -1,0 +1,44 @@
+# 1) Use the Minimal Mistakes theme
+remote_theme: "mmistakes/minimal-mistakes@4.27.2"
+
+# 2) Basic site info
+title: "Dorcus Digital Blog"
+email: admin@dorcus.digital
+description: "Your source for dev updates, rants & tutorials."
+url: "https://blog.typicalcolours2.com"
+baseurl: ""
+
+# 3) Clean, pretty permalinks
+permalink: "/:title/"
+
+# 4) Markdown options + plugins
+markdown: kramdown
+highlighter: rouge
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate
+
+paginate: 5
+paginate_path: "/page/:num/"
+
+# 5) Collections
+collections:
+  posts:
+    output: true
+
+# 6) Netlify CMS admin
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "single"
+      permalink: "/:title/"
+
+# 7) Exclude admin & build artifacts
+exclude:
+  - "admin"
+  - "node_modules"
